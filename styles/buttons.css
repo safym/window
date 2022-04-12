@@ -1,0 +1,50 @@
+.panel{
+    display: flex;
+    align-items: flex-start;
+    background-color: #353535;
+    margin: 7px;
+    border-radius: 5px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 35px;
+
+    /* border-radius: 25%; */
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+}
+
+.control{
+    width: 30px;
+    height: 30px;
+
+    margin: 10px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    margin: 0;
+}
+
+.control img{
+    flex: auto;
+    width: 17px;
+    height: 17px;
+}
+
+.control:hover {
+    background-color: #3a3a3a;
+    border: 1px rgba(0, 0, 0, 0.596) solid;
+}
+

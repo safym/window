@@ -8,34 +8,41 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/buttons.css">
+
 </head>
 
 <body>
     <div class="window">
 
         <div class="header">
-            <div class="buttons">
-                <div class="button">back</div>
-                <div class="button">forward</div>
+            <div class="panel">
+                <div class="button"><img src="res/icons/system/back.svg"></div>
+                <div class="button"><img src="res/icons/system/forward.svg"></div>
             </div>
             
-            <div class="buttons">
-                <div class="homedir">Home</div>
-                <div class="path">path</div>
+            <div class="panel">
+                <div class="button" id="homedir">
+                        <img src="res/icons/home.svg">
+                        <p>Home</p>
+                </div>
+                <div class="button" id="path"><p>pathHHHHHHHHHHHH</p></div>
             </div>
 
-            <div class="buttons">
-                <div class="search">search</div>
+            <div class="panel">
+                <div class="button" id="search">
+                        <img src="res/icons/system/search.svg">
+                </div>
             </div>
 
-            <div class="buttons">
-                <div class="view">view</div>
-                <div class="options">options</div>
+            <div class="panel">
+                <div class="button" id="view">view</div>
+                <div class="button" id="options">options</div>
             </div>
 
-            <div class="buttons">
-                <div class="settings">settings</div>
+            <div class="panel">
+                <div class="button" id="settings">settings</div>
             </div>
 
             <div class="controls">

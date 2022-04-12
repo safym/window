@@ -3,9 +3,9 @@
 }
 
 body {
-    background-image: url(res/wallpaper.jpg);
-    
-    background-size: cover
+    background-image: url(../res/wallpaper.jpg);
+
+    background-size: cover;
 }
 
 .window {
@@ -14,7 +14,10 @@ body {
     background-color: #2D2D2D;
     margin: 5% 25% 5% 25%;
     border-radius: 10px;
+
     border: 1px solid #070707;
+   
+
 
     display: grid;
     display: grid; 
@@ -40,33 +43,9 @@ body {
     border-bottom: 1px solid #070707;
 
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
 }
-.buttons{
-    display: flex;
-}
-
-.controls{
-    width: 10%;
-
-    display: flex;
-    justify-content: flex-end;
-}
-
-.control{
-    width: 30px;
-    height: 30px;
-
-    margin: 10px;
-    border-radius: 15px;
-}
-
-.control:hover {
-    background-color: #3a3a3a;
-    border-inline: 1px black solid;
-}
-
 
 
 .sidebar {
