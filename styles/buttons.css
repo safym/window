@@ -1,19 +1,105 @@
-.panel{
+.panel {
+
     display: flex;
     align-items: flex-start;
     background-color: #353535;
-    margin: 7px;
+    margin: 5px;
     border-radius: 5px;
 }
 
-.button {
+.dualbutton {
+    flex: auto;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    height: 35px;
+    height: 32px;
 
+    transition: 0.2s ease-out;
     /* border-radius: 25%; */
+}
+
+.button {
+    flex: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 32px;
+
+    border: 1px rgba(0, 0, 0, 0.596) solid;
+
+    transition: 0.2s ease-out;
+    border-radius: 5px;  
+} 
+
+.main{
+    width: 700px;
+    display: flex;
+}
+
+#back, #homedir, #view {
+    border-radius: 5px 0 0 5px;
+    border: 1px rgba(0, 0, 0, 0.596) solid;
+    border-right: 0;
+
+    /* justify-content: flex-start; */
+}
+
+#homedir {
+    flex: auto;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 90px;
+}
+
+#homedir *{
+    flex: auto;
+}
+
+#forward, #options {
+    background-color: #333333;
+    border-radius: 0 5px 5px 0;
+    border: 1px rgba(0, 0, 0, 0.596) solid;
+    border-left: 0;
+}
+
+.input {
+    flex: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 32px;
+
+    border: 1px rgba(0, 0, 0, 0.596) solid;
+
+    transition: 0.2s ease-out;
+    border-radius: 0 5px 5px 0;  
+    border-left: 0;
+}
+
+#path {
+    width: 400px;
+}
+
+#search{
+    width: 32px;
+    height: 32px;
+}
+
+#settings {
+    width: 32px;
+    height: 32px;
+}
+
+.prefcontainer {
+    display: flex;
+    width: 120px;
+
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .controls{
@@ -37,14 +123,39 @@ p{
     margin: 0;
 }
 
-.control img{
+.header img{
     flex: auto;
     width: 17px;
-    height: 17px;
+    height: 17px; 
+}
+
+
+#back:hover, .button:hover, #view:hover, #settings:hover {
+    background-color: #3a3a3a;
+}
+
+.item:hover{
+    background-color: #3a3a3a;
+    cursor: default;
+
+}
+
+#move, #pref {
+    display: flex;
+    width: 64px;
+}
+
+.borderbutton{
+    background-color: rgba(0, 0, 0, 0.596);
+    margin: 0;
+    width: 1px;
+    height: 32px;
+    padding: 0;
 }
 
 .control:hover {
     background-color: #3a3a3a;
     border: 1px rgba(0, 0, 0, 0.596) solid;
 }
+
 

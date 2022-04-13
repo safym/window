@@ -2,147 +2,159 @@
 <html>
 
 <head>
-    <title>File manager</title>
+        <title>File manager</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/buttons.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/buttons.css">
 
 </head>
 
 <body>
-    <div class="window">
+        <div class="window">
 
-        <div class="header">
-            <div class="panel">
-                <div class="button"><img src="res/icons/system/back.svg"></div>
-                <div class="button"><img src="res/icons/system/forward.svg"></div>
-            </div>
-            
-            <div class="panel">
-                <div class="button" id="homedir">
-                        <img src="res/icons/home.svg">
-                        <p>Home</p>
+                <div class="header">
+                        <div class="main">
+                                <div class="panel" id="move">
+                                        <div class="dualbutton" id="back"><img src="res/icons/system/back.svg"></div>
+                                        <div class="borderbutton"></div>
+                                        <div class="dualbutton" id="forward"><img src="res/icons/system/forward.svg">
+                                        </div>
+                                </div>
+
+                                <div class="panel">
+                                        <div class="button" id="homedir">
+                                                <img src="res/icons/home.svg">
+                                                <p>Home</p>
+                                        </div>
+                                        <div class="borderbutton"></div>
+                                        <div class="input" id="path">
+                                                
+                                        </div>
+                                </div>
+
+                                <div class="panel">
+                                        <div class="button" id="search">
+                                                <img src="res/icons/system/search.svg">
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="prefcontainer">
+                                <div class="panel" id="pref">
+
+                                        <div class="dualbutton" id="view"><img src="res/icons/system/list.svg"></div>
+                                        <div class="borderbutton"></div>
+                                        <div class="dualbutton" id="options"><img src="res/icons/system/expand.svg">
+                                        </div>
+
+                                </div>
+
+                                <div class="panel">
+                                        <div class="button" id="settings"><img src="res/icons/system/menu.svg"></div>
+                                </div>
+                        </div>
+
+                        <div class="controls">
+
+                                <div class="control"><img src="res/icons/system/close.svg"></div>
+
+                        </div>
+
                 </div>
-                <div class="button" id="path"><p>pathHHHHHHHHHHHH</p></div>
-            </div>
 
-            <div class="panel">
-                <div class="button" id="search">
-                        <img src="res/icons/system/search.svg">
+                <div class="sidebar">
+                        <div class="sections">
+                                <div class="item">
+
+                                        <img src="res/icons/watch.svg">
+                                        <p>Recent</p>
+
+                                </div>
+                                <div class="item">
+
+                                        <img src="res/icons/star.svg">
+                                        <p>Starred</p>
+
+                                </div>
+                                <div class="item">
+
+                                        <img src="res/icons/home.svg">
+                                        <p>Home</p>
+
+                                </div>
+                                <div class="item">
+
+                                        <img src="res/icons/text.svg">
+                                        <p>Documents</p>
+
+                                </div>
+                                <div class="item">
+
+                                        <img src="res/icons/download.svg">
+                                        <p>Downloads</p>
+
+                                </div>
+                                <div class="item">
+
+                                        <img src="res/icons/music.svg">
+                                        <p>Music</p>
+
+                                </div>
+                                <div class="item">
+
+                                        <img src="res/icons/gallery.svg">
+                                        <p>Pictures</p>
+
+                                </div>
+                                <div class="item">
+
+                                        <img src="res/icons/videocam.svg">
+                                        <p>Videos</p>
+
+                                </div>
+                                <div class="item">
+
+                                        <img src="res/icons/trash.svg">
+                                        <p>Trash</p>
+
+                                </div>
+                                <div class="borderline"></div>
+                                <div class="item">
+
+                                        <img src="res/icons/folder.svg">
+                                        <p>Gitlab</p>
+
+                                </div>
+                                <div class="item">
+
+                                        <img src="res/icons/folder.svg">
+                                        <p>Github</p>
+
+                                </div>
+                                <div class="item">
+
+                                        <img src="res/icons/folder.svg">
+                                        <p>Telegram</p>
+
+                                </div>
+                                <div class="borderline"></div>
+                                <div class="item">
+
+                                        <img src="res/icons/add.svg">
+                                        <p>Other Locations</p>
+
+                                </div>
+                        </div>
+
                 </div>
-            </div>
 
-            <div class="panel">
-                <div class="button" id="view">view</div>
-                <div class="button" id="options">options</div>
-            </div>
+                <div class="content">
 
-            <div class="panel">
-                <div class="button" id="settings">settings</div>
-            </div>
-
-            <div class="controls">
-
-                <div class="control"><img src="res/icons/system/close.svg"></div>
-  
-            </div>    
-
+                </div>
         </div>
-
-        <div class="sidebar">
-            <div class="sections">
-                <div class="item">
-                    
-                        <img src="res/icons/watch.svg">
-                        <p>Recent</p>
-                    
-                </div>
-                <div class="item">
-                    
-                        <img src="res/icons/star.svg">
-                        <p>Starred</p>
-                    
-                </div>
-                <div class="item">
-                    
-                        <img src="res/icons/home.svg">
-                        <p>Home</p>
-                    
-                </div>
-                <div class="item">
-                    
-                        <img src="res/icons/text.svg">
-                        <p>Documents</p>
-                    
-                </div>
-                <div class="item">
-                    
-                        <img src="res/icons/download.svg">
-                        <p>Downloads</p>
-                    
-                </div>
-                <div class="item">
-                    
-                        <img src="res/icons/music.svg">
-                        <p>Music</p>
-                    
-                </div>
-                <div class="item">
-                    
-                        <img src="res/icons/gallery.svg">
-                        <p>Pictures</p>
-                    
-                </div>
-                <div class="item">
-                    
-                        <img src="res/icons/videocam.svg">
-                        <p>Videos</p>
-                    
-                </div>
-                <div class="item">
-                    
-                        <img src="res/icons/trash.svg">
-                        <p>Trash</p>
-                    
-                </div>
-                <div class="borderline"></div>
-                <div class="item">
-                    
-                        <img src="res/icons/folder.svg">
-                        <p>Gitlab</p>
-                    
-                </div>
-                <div class="item">
-                    
-                        <img src="res/icons/folder.svg">
-                        <p>Github</p>
-                    
-                </div>
-                <div class="item">
-                    
-                        <img src="res/icons/folder.svg">
-                        <p>Telegram</p>
-                    
-                </div>
-                <div class="borderline"></div>
-                <div class="item">
-                    
-                        <img src="res/icons/add.svg">
-                        <p>Other Locations</p>
-                    
-                </div>
-            </div>
-
-        </div>
-
-        <div class="content">
-
-        </div>
-    </div>
 </body>
 
 </html>

@@ -35,10 +35,11 @@ body {
 .header {
     grid-area: 1 / 1 / 2 / 3; 
 
+    height: 45px;
 
     background-image: linear-gradient(to bottom,#333333,#262626);
    
-    height: 100%;
+    
     border-radius: 10px 10px 0 0;
     border-bottom: 1px solid #070707;
 
@@ -85,13 +86,11 @@ body {
 .item {
     display: flex;
     align-items: center;
-    transition: 0.3s ease-out;
- 
-
+    transition: 0.2s ease-out;
 }
 
 .item:hover{
     background-color: #3a3a3a;
     cursor: default;
-
 }
+
