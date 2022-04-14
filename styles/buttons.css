@@ -130,7 +130,11 @@ p{
 }
 
 
-#back:hover, .button:hover, #view:hover, #settings:hover {
+#back:hover, 
+.button:hover, 
+#view:hover, 
+#settings:hover,
+#options:hover {
     background-color: #3a3a3a;
 }
 
