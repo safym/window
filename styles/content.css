@@ -34,11 +34,61 @@
 
 
 
-.headercontent {
-    display: flex;
 
-    height: 20px;
+.headercontent {
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+
+    height: 25px;
 
     border-bottom: 1px solid #555555;
     color: #7c7c7c;
+
+    font-size: medium;
 }
+
+.name,
+.size,
+.modified {
+  
+    height: 100%;
+    border-right: 1px solid #555555;
+}
+
+.name,
+.filename {
+    width: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    padding-left: 7px;
+}
+
+.size,
+.filesize {
+    display: flex;
+    justify-content: start;
+
+    padding-left: 7px;
+    width: 90px;
+}
+
+.modified,
+.modfile {
+    display: flex;
+    justify-content: end;
+
+    padding-right: 7px;
+    width: 90px;
+}
+
+.modified {
+    justify-content: end;
+
+    padding-right: 7px;
+    width: 90px;
+}
+

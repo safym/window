@@ -20,7 +20,7 @@ body {
 
 
     display: grid;
-    display: grid; 
+    
     grid-template-columns: 2fr 6fr; 
     grid-template-rows: 0.7fr 10fr; 
 
@@ -41,7 +41,8 @@ body {
    
     
     border-radius: 10px 10px 0 0;
-    border-bottom: 1px solid #070707;
+
+    outline:1px solid black;
 
     display: flex;
     justify-content: space-between;
