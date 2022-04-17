@@ -28,7 +28,6 @@ body {
     font-size: 15px;
     
     color: #C2C2C2;
-
     
 }
 
@@ -92,8 +91,12 @@ body {
     transition: 0.2s ease-out;
 }
 
-.item:hover{
-    background-color: #3a3a3a;
-    cursor: default;
-}
+.newbutton {
+    width: 40px;
+    height: 40px;
 
+    padding: 8px;
+    background-color: #292929;
+    border-radius: 10px;
+    border: 1px solid black;
+}

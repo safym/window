@@ -1,0 +1,30 @@
+.control:hover {
+    background-color: #3a3a3a;
+    border: 1px rgba(0, 0, 0, 0.596) solid;
+}
+
+#back:hover, 
+.button:hover, 
+#view:hover, 
+#settings:hover,
+#options:hover,
+.item:hover,
+.newbutton:hover {
+    background-color: #3a3a3a;
+    cursor: default;
+}
+
+.name:hover,
+.size:hover,
+.modified:hover {
+  color: #a1a1a1;
+  cursor: default;
+}
+
+.file:hover {
+    background-color: rgb(66, 59, 110);
+    cursor: default;
+}
+
+
+

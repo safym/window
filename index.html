@@ -11,11 +11,12 @@
         <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/buttons.css">
         <link rel="stylesheet" href="styles/content.css">
+        <link rel="stylesheet" href="styles/animation.css">
 
 </head>
 
-<body>
-        <div class="window">
+<body id="body">
+        <div class="window" id="window">
 
                 <div class="header">
                         <div class="main">
@@ -58,9 +59,9 @@
                                 </div>
                         </div>
 
-                        <div class="controls">
+                        <div class="controls" id="controls">
 
-                                <div class="control"><img src="res/icons/system/close.svg"></div>
+                                <div class="control"><img class="closebutton" src="res/icons/system/close.svg"></div>
 
                         </div>
 
@@ -183,6 +184,9 @@
                                         <p>1:59</p>
                                 </div>
 
+                                <div class="star">
+                                        <img src="res/icons/content/star.svg">
+                                </div>
 
                         </div>
 
@@ -202,6 +206,10 @@
                                 <div class="modfile">
                                         <p>6 Apr</p>
                                 </div>
+
+                                <div class="star">
+                                        <img src="res/icons/content/star.svg">
+                                </div>
                         </div>
 
                         <div class="borderline_content"></div>
@@ -217,6 +225,10 @@
 
                                 <div class="modfile">
                                         <p>9 Feb</p>
+                                </div>
+
+                                <div class="star">
+                                        <img src="res/icons/content/star.svg">
                                 </div>
                         </div>
 
@@ -234,6 +246,10 @@
                                 <div class="modfile">
                                         <p>14:01</p>
                                 </div>
+
+                                <div class="star">
+                                        <img src="res/icons/content/star.svg">
+                                </div>
                         </div>
 
                         <div class="borderline_content"></div>
@@ -250,6 +266,10 @@
                                 <div class="modfile">
                                         <p>Yesterday</p>
                                 </div>
+
+                                <div class="star">
+                                        <img src="res/icons/content/star.svg">
+                                </div>
                         </div>
 
                         <div class="borderline_content"></div>
@@ -257,6 +277,7 @@
 
                 </div>
         </div>
+        <script src="scripts.js"></script>
 </body>
 
 </html>

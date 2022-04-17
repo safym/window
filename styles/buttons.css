@@ -119,6 +119,10 @@
     align-items: center;
 }
 
+.closebutton {
+    height: 100%;
+}
+
 p{
     margin: 0;
 }
@@ -127,21 +131,6 @@ p{
     flex: auto;
     width: 17px;
     height: 17px; 
-}
-
-
-#back:hover, 
-.button:hover, 
-#view:hover, 
-#settings:hover,
-#options:hover {
-    background-color: #3a3a3a;
-}
-
-.item:hover{
-    background-color: #3a3a3a;
-    cursor: default;
-
 }
 
 #move, #pref {
@@ -157,9 +146,5 @@ p{
     padding: 0;
 }
 
-.control:hover {
-    background-color: #3a3a3a;
-    border: 1px rgba(0, 0, 0, 0.596) solid;
-}
 
 
