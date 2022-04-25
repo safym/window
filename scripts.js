@@ -16,6 +16,14 @@
 
 // }
 
+window.onload = function(){
+    window.setInterval(function(){
+         var now = new Date();
+          var clock = document.getElementById("clock");
+        clock.innerHTML = now.toDateString() + " " + now.toLocaleTimeString();
+    }, 1000);
+   };
+
 document.addEventListener('click', function (e) {
     if (hasClass(e.target, 'newbutton')) {
         // открывает окно
