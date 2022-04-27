@@ -1,3 +1,8 @@
+:root {
+    --clock-height: 25px;
+    --clock-width: 180px;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -19,8 +24,6 @@ body {
     border-radius: 10px;
 
     border: 1px solid #070707;
-   
-
 
     display: grid;
     
@@ -40,7 +43,7 @@ body {
     height: 45px;
 
     background-image: linear-gradient(to bottom,#333333,#262626);
-   
+
     
     border-radius: 10px 10px 0 0;
 
@@ -56,7 +59,6 @@ body {
     grid-area: 2 / 1 / 3 / 1; 
     background-color: #313131;
     border-radius: 0 0 0 10px;
-  
 }
 
 .sections {
@@ -98,17 +100,41 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content:space-between;
     width: 100%;
     height: 25px;
     background-color: #070707;
     
 }
 
-#clock {
+#clock,
+.toptext {
     color: white;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 15px;
     font-weight: bold;
+}
+
+#clock {
+    width: var(--clock-width);
+    height: var(--clock-height);
+
+    position: absolute;
+
+    top: 2px;
+    left: calc(50% - var(--clock-width)/ 2);
+
     letter-spacing: 1px;
+}
+
+.newbutton {
+    justify-self: flex-start;
+
+    width: 50px;
+    height: 20px;
+
+    margin: 2px;
+    background-color: #292929;
+    border-radius: 10px;
+    border: 1px solid black;
 }

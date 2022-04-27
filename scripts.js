@@ -18,11 +18,11 @@
 
 window.onload = function(){
     window.setInterval(function(){
-         var now = new Date();
-          var clock = document.getElementById("clock");
+        var now = new Date();
+        var clock = document.getElementById("clock");
         clock.innerHTML = now.toDateString() + " " + now.toLocaleTimeString();
     }, 1000);
-   };
+};
 
 document.addEventListener('click', function (e) {
     if (hasClass(e.target, 'newbutton')) {
@@ -44,10 +44,12 @@ document.addEventListener('click', function (e) {
         const $openbutton = document.createElement('img')
         $openbutton.className = "newbutton";
         $openbutton.id = "newbutton";
-        $openbutton.src = "res/icons/system/filemanager.svg";
+        $openbutton.src = "res/icons/system/more.svg";
 
-        const $window = document.getElementById('window');
-        $window.after($openbutton);
+        
+
+        const $top = document.getElementById('top');
+        $top.prepend($openbutton);
 
     }
 }, false);
