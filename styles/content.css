@@ -11,12 +11,20 @@
 
 .file {
     display: flex;  
-    align-items: center;  
+    align-items: center; 
+
+    height: 60px;
+    width: 100%;
+    
+
 
     padding: 5px;
 
     transition: 0.2s;
 }
+
+
+
 
 .borderline_content {
     background-color: #383838;
@@ -45,7 +53,6 @@
 .name,
 .size,
 .modified {
-  
     height: 100%;
     border-right: 1px solid #555555;
 }
