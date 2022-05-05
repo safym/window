@@ -4,72 +4,21 @@ var $window = document.getElementById('window');
 
 document.addEventListener('click', function (e) {
     // console.log(e.target);
+    var parent = getParentWindow(e.target);
 
-    var menuentry = checkParent(e.target, 'file');
-
-    if (hasClass(e.target, 'newbutton')) {
-        openWindow();
+    if (hasClass(e.target, 'openbutton')) {
+        openWindow(e.target, parent);
     }
 
     else if (hasClass(e.target, 'closebutton')) {
-        closeWindow();
+        closeWindow(parent);
     }
 
+    var menuentry = checkParent(e.target, 'file');
 
     if (menuentry) {
-
-        var $winfile = document.createElement('div');
-        $winfile.className = "window";
-        $winfile.id = "window";
-
-        var randomtop = getRndInteger(150, 400);
-        var randomleft = getRndInteger(1000, 1400);
-        
-
-        $winfile.style.width = '500px';
-        $winfile.style.height = '500px';
-        $winfile.style.position = 'absolute';
-        $winfile.style.top = randomtop.toString() + 'px';
-        $winfile.style.left = randomleft.toString() + 'px';
-        $winfile.style.zIndex = 1000;
-        
-        $window.after($winfile);
-
-        var $headerfile = document.createElement('div');
-        $headerfile.className = "header";
-        
-        $winfile.prepend($headerfile);
-        addDrag($headerfile, getParentWindow($headerfile));
-
-        var $nameile = document.createElement('p');
-        $nameile.className = "namefile";
-        $nameile.textContent = menuentry.toString();
-        $nameile.style.width = '70%';
-        $nameile.style.display = 'flex';
-        $nameile.style.justifyContent = 'center';
-
-        $headerfile.prepend($nameile);
-
-        var $controlsfile = document.createElement('div');
-        $controlsfile.className = "controls";
-
-        $headerfile.append($controlsfile);
-
-        var $closefile = document.createElement('div');
-        $closefile.className = "control";
-
-        $controlsfile.append($closefile);
-
-        var $btnClosefile = document.createElement('img');
-        $btnClosefile.className = "closebutton";
-        $btnClosefile.src = "res/icons/system/close.svg";
-
-        $closefile.append($btnClosefile);
-        
-
+        createWindow(menuentry);
     }
-
-    
 }, false);
 
 
@@ -109,28 +58,96 @@ function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
 }
 
-function openWindow() {
-    // открывает окно
-    const openId = document.getElementById("window");
+//не делать кнопки для файлов.... это бессмысленно, я поняла
+function openWindow(elem, parentWindow) {
+    var idToOpen = splitBtnIdToOpen(elem);
+    console.log(idToOpen);
+    console.log(elem);
+
+    var openId = document.getElementById(idToOpen);
         
     openId.style.display = "grid";
 
-    // // скрывает кнопку
-    const openButton = document.getElementById("newbutton");
+    // скрывает кнопку
+    var openButton = document.getElementById(elem.id);
     openButton.style.display = "none";
 }
 
-function closeWindow(){
-     // закрываем окно
-    const closeId = document.getElementById("window");
-    closeId.style.display = "none";
+function closeWindow(parentWindow){
 
-     // создаем кнопку, которая открывает окно
-    const $openbutton = document.createElement('img')
-    $openbutton.className = "newbutton";
-    $openbutton.id = "newbutton";
-    $openbutton.src = "res/icons/system/more.svg";
+    // закрываем окно
+    parentWindow.style.display = "none";
 
-    const $top = document.getElementById('top');
+    // создаем кнопку, которая открывает окно
+    var $openbutton = document.createElement('div')
+    $openbutton.className = "openbutton";
+    $openbutton.id = "openBtn" + parentWindow.id.toString();
+    $openbutton.textContent = splitWinIdToOpen(parentWindow);
+    
+
+    var $top = document.getElementById('top');
     $top.prepend($openbutton);
+}
+
+function createWindow(elemFile) {
+
+    var $winfile = document.createElement('div');
+    $winfile.className = "window";
+    $winfile.id = getIdToOpen(elemFile); 
+
+    var randomtop = getRndInteger(150, 400);
+    var randomleft = getRndInteger(1000, 1400);
+    
+
+    $winfile.style.width = '500px';
+    $winfile.style.height = '500px';
+    $winfile.style.position = 'absolute';
+    $winfile.style.top = randomtop.toString() + 'px';
+    $winfile.style.left = randomleft.toString() + 'px';
+    $winfile.style.zIndex = 1000;
+    
+    $window.after($winfile);
+
+    var $headerfile = document.createElement('div');
+    $headerfile.className = "header";
+    
+    $winfile.prepend($headerfile);
+    addDrag($headerfile, getParentWindow($headerfile));
+
+    var $namefile = document.createElement('p');
+    $namefile.className = "namefile";
+    $namefile.textContent = elemFile.toString();
+    $namefile.style.width = '70%';
+    $namefile.style.display = 'flex';
+    $namefile.style.justifyContent = 'center';
+
+    $headerfile.prepend($namefile);
+
+    var $controlsfile = document.createElement('div');
+    $controlsfile.className = "controls";
+
+    $headerfile.append($controlsfile);
+
+    var $closefile = document.createElement('div');
+    $closefile.className = "control";
+
+    $controlsfile.append($closefile);
+
+    var $btnClosefile = document.createElement('img');
+    $btnClosefile.className = "closebutton";
+    $btnClosefile.src = "res/icons/system/close.svg";
+
+    $closefile.append($btnClosefile);
+}
+
+function getIdToOpen(elemFile) {
+    return "Win" + elemFile.toString();
+}
+
+function splitWinIdToOpen(elemFile) {
+    return elemFile.id.replace('Win', '');
+}
+
+function splitBtnIdToOpen(elemFile) {
+    return elemFile.id.replace('openBtn', '');
 }
