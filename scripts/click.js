@@ -2,7 +2,11 @@ import { addDrag } from './drag.js';
 
 var $window = document.getElementById('window');
 
+// THIS BULLSHIT IS BROKEN IN CHROME 
+// HOW?????
 document.addEventListener('click', function (e) {
+    console.log("addEventListener");
+
     // console.log(e.target);
     var parent = getParentWindow(e.target);
 
@@ -11,13 +15,31 @@ document.addEventListener('click', function (e) {
     }
 
     else if (hasClass(e.target, 'closebutton')) {
-        closeWindow(parent);
+            closeWindow(parent);
     }
 
     var menuentry = checkParent(e.target, 'file');
+    var filename = getFileName(menuentry);
+    console.log(filename);
 
     if (menuentry) {
-        createWindow(menuentry);
+        if (menuentry.id == "image") {
+            console.log(filename);
+            createWindowImage(menuentry);
+        }
+        if (menuentry.id == "video") {
+            
+        }
+        if (menuentry.id == "text") {
+            
+        }
+        if (menuentry.id == "music") {
+            
+        }
+        if (menuentry.id == "folder") {
+            
+        }
+        
     }
 }, false);
 
@@ -39,7 +61,14 @@ function checkParent(elem, className) {
             return false;
         } 
     }
-    return parent.id;
+    return parent;
+}
+
+function getFileName(elem) {
+    // console.log(elem.children[0].children[1].textContent);
+
+    return elem.children[0].children[1].textContent;
+
 }
 
 function getParentWindow(elem) {
@@ -58,8 +87,10 @@ function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
 }
 
-//не делать кнопки для файлов.... это бессмысленно, я поняла
 function openWindow(elem, parentWindow) {
+
+    console.log(parentWindow);
+
     var idToOpen = splitBtnIdToOpen(elem);
     console.log(idToOpen);
     console.log(elem);
@@ -75,21 +106,26 @@ function openWindow(elem, parentWindow) {
 
 function closeWindow(parentWindow){
 
+    console.log(parentWindow);
+
+
     // закрываем окно
     parentWindow.style.display = "none";
 
-    // создаем кнопку, которая открывает окно
-    var $openbutton = document.createElement('div')
-    $openbutton.className = "openbutton";
-    $openbutton.id = "openBtn" + parentWindow.id.toString();
-    $openbutton.textContent = splitWinIdToOpen(parentWindow);
-    
+    if (parentWindow == $window) {
+         // создаем кнопку, которая открывает окно
+        var $openbutton = document.createElement('img')
+        $openbutton.className = "openbutton";
+        $openbutton.id = "openBtn" + parentWindow.id.toString();
+        $openbutton.src = "res/icons/system/more.svg";
 
-    var $top = document.getElementById('top');
-    $top.prepend($openbutton);
+
+        var $top = document.getElementById('top');
+        $top.prepend($openbutton);
+    }
 }
 
-function createWindow(elemFile) {
+function createWindowImage(elemFile) {
 
     var $winfile = document.createElement('div');
     $winfile.className = "window";
@@ -98,7 +134,8 @@ function createWindow(elemFile) {
     var randomtop = getRndInteger(150, 400);
     var randomleft = getRndInteger(1000, 1400);
     
-
+    $winfile.style.display = 'flex';
+    $winfile.style.flexDirection = 'column';
     $winfile.style.width = '500px';
     $winfile.style.height = '500px';
     $winfile.style.position = 'absolute';
@@ -138,6 +175,27 @@ function createWindow(elemFile) {
     $btnClosefile.src = "res/icons/system/close.svg";
 
     $closefile.append($btnClosefile);
+
+    // var $contentFile = document.createElement('div');
+    // $contentFile.className = "contentFile";
+    // $contentFile.display = 'flex';
+
+    // $contentFile.style.width = '100%';
+    // $contentFile.style.height = '100%';
+    // $contentFile.style.padding = '0';
+
+    // $headerfile.after($contentFile);
+
+    var $contentFile = document.createElement('img');
+    $contentFile.className = "contentFile";
+    $contentFile.display = 'flex';
+
+    $contentFile.style.width = '100%';
+    $contentFile.style.height = '100%';
+    $contentFile.style.padding = '0';
+    $contentFile.src = "res/content/image.jpg"
+
+    $headerfile.after($contentFile);
 }
 
 function getIdToOpen(elemFile) {
