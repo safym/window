@@ -46,6 +46,25 @@ document.addEventListener("click", function (e) {
     }
 
     // действия окна файла музыки
+    // console.log(checkParent(e.target, "window"));
+    // console.log(e.target);
+        if (checkParent(e.target, "window")) {
+            // Audio = document.getElementById("contentFileMusic");
+            Audio = document.querySelector("#contentFileMusic");
+            // console.log(Audio);
+            if (e.target.id == "playMusic") {
+                addMusicPlay(Audio);
+                changeMusicButton(e.target);
+            }
+
+            if (e.target.id == "pauseMusic") {
+                addMusicPause(Audio);
+                changeMusicButton(e.target);
+            }
+            
+            // console.log(checkParent(e.target, "Winmusic"))
+            
+        }
     
 }, false);
 
@@ -263,9 +282,8 @@ function createWindowMusic(elemFile) {
     var $contentFile = new Audio("res/content/ambhouse.mp3");
     $contentFile.className = "contentFile";
     $contentFile.id = "contentFileMusic";
-    $contentFile.preload = "none"
-    $contentFile.display = "flex";
-    addMusicPlay($contentFile);
+    $contentFile.preload = "none";
+    //addMusicPlay($contentFile);
 
     $contentFile.style.width = "100%";
     $contentFile.style.height = "100%";
@@ -275,11 +293,25 @@ function createWindowMusic(elemFile) {
     $headerfile.after($contentFile);
 
     // ДЕЛАЮ кнопки воспроизведения аудио
-    // var $btnPlayMusic = document.createElement("div");
-    // $btnClosefile.className = "button";
-    // $btnClosefile.src = "res/icons/system/close.svg";
+    var $containerPlayMusic = document.createElement("div");
+    $containerPlayMusic.style.display = "flex";
+    $containerPlayMusic.style.alignItems = "center";
+    // $containerPlayMusic.className = "button";
+    // $containerPlayMusic.id = "play";
+    
+    // $btnPlayMusic.src = "res/icons/system/play.svg";
 
-    // $closefile.append($btnClosefile);
+    $headerfile.after($containerPlayMusic);
+
+    var $btnPlayMusic = document.createElement("img");
+    $btnPlayMusic.className = "button";
+    $btnPlayMusic.id = "playMusic";
+    $btnPlayMusic.style.width = "50px";
+    $btnPlayMusic.style.height = "50px";
+    $btnPlayMusic.style.padding = "10px";
+    $btnPlayMusic.src = "res/icons/system/play.svg";
+
+    $containerPlayMusic.append($btnPlayMusic);
     
 }
 
@@ -297,4 +329,19 @@ function splitBtnIdToOpen(elemFile) {
 
 function addMusicPlay(music) {
     music.play()
+}
+
+function addMusicPause(music) {
+    music.pause()
+}
+
+function changeMusicButton(musicButton) {
+    if (musicButton.id == "playMusic") {
+        musicButton.id = "pauseMusic";
+        return
+    }
+    if (musicButton.id == "pauseMusic") {
+        musicButton.id = "playMusic";
+        return
+    }
 }
