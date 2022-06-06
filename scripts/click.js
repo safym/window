@@ -74,7 +74,7 @@ function createWindowImage(elemFile) {
     $winfile.id = getIdToOpen(elemFile); 
 
     var $randomtop = getRndInteger(150, 400);
-    var $randomleftLeft = getRndInteger(1000, 1400);
+    var $randomleft = getRndInteger(1000, 1400);
     
     $winfile.style.display = "flex";
     $winfile.style.flexDirection = "column";
